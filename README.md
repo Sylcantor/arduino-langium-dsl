@@ -7,25 +7,32 @@ This README provides instructions on how to generate and validate Arduino code u
 
 To get started with Arduino-Langium DSL, you need to run the following commands:
 
-1. **Install the Dependencies**:
+1. **Clone the Repository**:
+
+Github CLI:
+```
+gh repo clone Sylcantor/arduino-langium-dsl
+````
+
+2. **Install the Dependencies**:
 
 ```
 npm install
 ```
 
-2. **Generate the Language Server and CLI**: 
+3. **Generate the Language Server and CLI**: 
 
 ```
 npm run langium:generate
 ```
 
-3. **Build the Project**:
+4. **Build the Project**:
 
 ```
 npm run build
 ```
 
-4. **Validate a `.ard` File**:
+5. **Validate a `.ard` File**:
 To validate a `.ard` file using the DSL, use the command:
 
 ```
@@ -34,7 +41,7 @@ To validate a `.ard` file using the DSL, use the command:
 
 Replace `{your_file}` with the path to your `.ard` file.
 
-5. **Generate Arduino Code**:
+6. **Generate Arduino Code**:
 To generate Arduino code from a `.ard` file, use the command:
 
 ```
