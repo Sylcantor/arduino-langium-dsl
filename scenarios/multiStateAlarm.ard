@@ -1,0 +1,30 @@
+app MultiStateAlarm {
+    brick button: SENSOR
+    brick buzzer: ACTUATOR initial LOW
+    brick led: ACTUATOR initial LOW
+
+    state readyToBuzz {
+        when button is HIGH transition to buzzing
+    }
+
+    state buzzing {
+        set buzzer to HIGH
+        after 500 transition to waitForLed
+    }
+
+    state waitForLed {
+        when button is HIGH transition to turnOnLed
+    }
+
+    state turnOnLed {
+        set buzzer to LOW
+        set led to HIGH
+        after 500 transition to waitForOff
+    }
+
+    state waitForOff {
+        when button is HIGH transition to readyToBuzz
+    }
+
+    initial readyToBuzz
+}

@@ -1,0 +1,17 @@
+app DualCheckAlarm {
+    brick button1: SENSOR
+    brick button2: SENSOR
+    brick buzzer: ACTUATOR initial LOW
+
+    state alarmOff {
+        when button1 is HIGH and button2 is HIGH transition to alarmOn
+    }
+
+    state alarmOn {
+        set buzzer to HIGH
+        when button1 is LOW transition to alarmOff
+        when button2 is LOW transition to alarmOff
+    }
+
+    initial alarmOff
+}

@@ -1,0 +1,26 @@
+app TemporalTransition {
+    brick sensor1: SENSOR
+    brick sensor2: SENSOR
+    brick actuator1: ACTUATOR initial LOW
+    brick actuator2: ACTUATOR initial LOW
+
+    state initialState {
+        when actuator1 is LOW transition to secondState
+    }
+
+    state secondState {
+        set actuator1 to HIGH
+        after 500 transition to thirdState
+    }
+
+    state thirdState {
+        set actuator2 to HIGH
+        after 500 transition to fourthState
+    }
+
+    state fourthState {
+        set actuator1 to LOW
+    }
+
+    initial initialState
+}

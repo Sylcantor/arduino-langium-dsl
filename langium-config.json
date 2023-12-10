@@ -1,0 +1,15 @@
+{
+    "projectName": "Arduino",
+    "languages": [{
+        "id": "arduino",
+        "grammar": "src/language/arduino.langium",
+        "fileExtensions": [".ard"],
+        "textMate": {
+            "out": "syntaxes/arduino.tmLanguage.json"
+        },
+        "monarch": {
+            "out": "syntaxes/arduino.monarch.ts"
+        }
+    }],
+    "out": "src/language/generated"
+}

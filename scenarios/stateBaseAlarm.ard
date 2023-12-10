@@ -1,0 +1,19 @@
+app StateBasedAlarm {
+    brick button: SENSOR
+    brick led: ACTUATOR initial LOW
+
+    state ledOff {
+        when button is HIGH transition to ledOn
+    }
+
+    state ledOn {
+        set led to HIGH
+        after 500 transition to waitForOff
+    }
+
+    state waitForOff {
+        when button is HIGH transition to ledOff
+    }
+
+    initial ledOff
+}

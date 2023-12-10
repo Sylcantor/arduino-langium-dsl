@@ -1,0 +1,17 @@
+app VerySimpleAlarm {
+    brick button: SENSOR
+    brick buzzer: ACTUATOR initial LOW
+    brick led: ACTUATOR initial LOW
+
+    state alarmOff {
+        when button is HIGH transition to alarmOn
+    }
+
+    state alarmOn {
+        set buzzer to HIGH
+        set led to HIGH
+        when button is LOW transition to alarmOff
+    }
+
+    initial alarmOff
+}
