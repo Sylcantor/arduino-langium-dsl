@@ -37,30 +37,42 @@ To generate Arduino code from a `.ard` file, use the command:
 
 Replace `{your_file}` with the path of your `.ard` file.
 
+You can find the generated code in the [output](./output) folder.
+
 ## Basic Scenarios
 
-The DSL comes with four basic scenarios, and one temporal transition scenario located in the `scenarios` folder:
+The DSL comes with four basic scenarios, and one temporal transition scenario located in the [scenarios](./scenarios) folder.
 Each scenario use the PIN allocation generator to allocate the pins.
 
 [1. **Very Simple Alarm**](./scenarios/verySimpleAlarm.ard)
 
 Pushing a button activates a LED and a buzzer. Releasing the button switches the actuators off.
 
+[output](./output/verySimpleAlarm.ino)
+
 [2. **Dual-Check Alarm**](./scenarios/dualCheckAlarm.ard)  
   
 It will trigger a buzzer if and only if two buttons are pushed at the very same time. Releasing at least one of the buttons stops the sound.
+
+[output](./output/dualCheckAlarm.ino)
 
 [3. **State-Based Alarm**](./scenarios/stateBaseAlarm.ard)  
 
 Pushing the button once switches the system into a mode where the LED is switched on. Pushing it again switches it off.
 
+[output](./output/stateBaseAlarm.ino)
+
 [4. **Multi-State Alarm**](./scenarios/multiStateAlarm.ard)  
 
 Pushing the button starts the buzz noise. Pushing it again stops the buzzer and switches the LED on. Pushing it again switches the LED off, and makes the system ready to make noise again after one push, and so on.
+
+[output](./output/multiStateAlarm.ino)
     
 [5. **Temporal Transition**](./scenarios/temporalLedControll.ard)
 
 This extension supports temporal transitions, i.e., transitions that are triggered a specific amount of time after entering a state.
+
+[output](./output/temporalLedControll.ino)
 
 ## PIN Allocation Generator
 
