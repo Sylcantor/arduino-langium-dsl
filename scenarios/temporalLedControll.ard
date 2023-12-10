@@ -1,0 +1,19 @@
+app TemporalLEDControl {
+    brick button1: SENSOR
+    brick led1: ACTUATOR initial LOW
+
+    state waitingForPress {
+        when button1 is HIGH transition to turnOnLed
+    }
+
+    state turnOnLed {
+        set led1 to HIGH
+        after 800 transition to turnOffLed
+    }
+
+    state turnOffLed {
+        set led1 to LOW
+    }
+
+    initial waitingForPress
+}
