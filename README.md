@@ -10,6 +10,7 @@ To get started with Arduino-Langium DSL, you need to run the following commands:
 1. **Generate the Language Server and CLI**: 
 
 ```
+npm install
 npm run langium:generate
 ```
 
