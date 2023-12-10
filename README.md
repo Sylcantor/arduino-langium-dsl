@@ -9,7 +9,7 @@ To get started with Arduino-Langium DSL, you need to run the following commands:
 
 1. **Clone the Repository**:
 
-Github CLI:
+    Github CLI:
 ```
 gh repo clone Sylcantor/arduino-langium-dsl
 ````
